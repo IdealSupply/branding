@@ -1,6 +1,5 @@
 ![Ideal Supply logo](./dist/images/logos/idealsupply-logo-red.svg)
 
-
 # Media Files 
 
 [Logos](./dist/images/logos)
