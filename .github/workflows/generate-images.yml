@@ -8,6 +8,8 @@ on:
 jobs:
   generate-image-variations:
     runs-on: ubuntu-latest
+    env:
+      CHANGED: "false"
     steps:
       - uses: actions/checkout@v3
       - name: Install Node & Dependencies
