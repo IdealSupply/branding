@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "images": "ts-node --project tsconfig.json ./.scripts/convert-images.ts"
+    "images": "ts-node --project tsconfig.json ./.scripts/convert-images.ts",
+    "build": "pnpm run images",
+    "actions-build":"pnpm run build"
   },
   "devDependencies": {
     "@types/imagemin": "^7.0.1",
