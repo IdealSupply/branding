@@ -1,11 +1,11 @@
 
-// import fs from 'fs';
 import { mkdir, readFile, rm, writeFile } from 'fs/promises';
 import imagemin from 'imagemin';
 import imageminGifsicle from 'imagemin-gifsicle';
 import imageminJpegtran from 'imagemin-jpegtran';
 import imageminOptiPng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
+import { dirname } from 'path';
 import svg2img, { svg2imgOptions } from 'svg2img';
 import yaml from 'yaml';
 
@@ -27,6 +27,7 @@ interface ImageConversionData {
     background?: string;
     color?: string;
     quality?: number;
+    path?: string;
 }
 
 async function convertImages() {
@@ -39,6 +40,9 @@ async function convertImages() {
     for (var sourceImage of images) {
         for (const variation of sourceImage.variations) {
             let source = sourceImage.path;
+            variation.path = dirname(source);
+            console.log(`Converting ${sourceImage.path} -> ${variation.path}/${variation.name}.${variation.format}`);
+
             if (variation.color) {
                 source = await loadSvgAndSetColor(sourceImage.path, variation.color);
             } else {
@@ -51,21 +55,9 @@ async function convertImages() {
             }
         }
     }
-    const files = await imagemin(['./tmp/images/*.*'], {
-        destination: './dist/images',
-        plugins: [
-            imageminOptiPng(),
-            imageminJpegtran(),
-            imageminGifsicle(),
-            imageminSvgo(
-                {
-                    multipass: true
-                }
-            )
-        ]
-    });
+
 }
-//apt-get install libpng-dev -y --no-install-recommends
+
 async function scaleSvg(source: string, data: ImageConversionData) {
     if (data.size) {
         const size = readSvgSize(source);
@@ -125,14 +117,29 @@ async function rasterizeSvg(source: string, data: ImageConversionData) {
 
 async function writeImageBufferToFile(buffer: Buffer, data: ImageConversionData) {
     const filename = `${data.name}.${data.format}`;
-    const path = `./tmp/images/${filename}`;
-
-    await mkdir('./tmp/images', { recursive: true });
-    await writeFile(path, buffer);
+    const path = `./tmp/ ${data.path}`;
+    const fullPath = `${path}/${filename}`;
+    const destPath = `./dist/${data.path}`;
+    await mkdir(path, { recursive: true });
+    await writeFile(fullPath, buffer);
+    await imagemin([fullPath], {
+        destination: destPath,
+        glob: false,
+        plugins: [
+            imageminOptiPng(),
+            imageminJpegtran(),
+            imageminGifsicle(),
+            imageminSvgo(
+                {
+                    multipass: true
+                }
+            )
+        ]
+    });
 }
 
 async function readSvg(path: string) {
-    return await readFile(path, 'utf8');
+    return await readFile(`src/${path}`, 'utf8');
 }
 
 function replaceCurrentColor(svg: string, color: string) {
@@ -145,7 +152,7 @@ async function loadSvgAndSetColor(path: string, color: string) {
 }
 
 async function loadImagesDataYaml() {
-    const data = await readFile('./images.yml', 'utf8');
+    const data = await readFile('./src/images.yml', 'utf8');
     return yaml.parse(data);
 }
 
