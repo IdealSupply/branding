@@ -4,7 +4,7 @@ import { mkdir, readFile, rm, writeFile } from 'fs/promises';
 import imagemin from 'imagemin';
 import imageminGifsicle from 'imagemin-gifsicle';
 import imageminJpegtran from 'imagemin-jpegtran';
-import imageminPngquant from 'imagemin-pngquant';
+import imageminOptiPng from 'imagemin-optipng';
 import imageminSvgo from 'imagemin-svgo';
 import svg2img, { svg2imgOptions } from 'svg2img';
 import yaml from 'yaml';
@@ -54,7 +54,7 @@ async function convertImages() {
     const files = await imagemin(['./tmp/images/*.*'], {
         destination: './dist/images',
         plugins: [
-            imageminPngquant(),
+            imageminOptiPng(),
             imageminJpegtran(),
             imageminGifsicle(),
             imageminSvgo(
