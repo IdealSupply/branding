@@ -22,7 +22,7 @@ jobs:
 
       - name: Check for updated files
         run: |
-          git add dist/
+          git add --all
           if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
             echo "CHANGED=true" >> $GITHUB_ENV
           fi
