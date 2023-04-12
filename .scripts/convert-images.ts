@@ -54,19 +54,9 @@ async function convertImages() {
     const files = await imagemin(['./tmp/images/*.*'], {
         destination: './dist/images',
         plugins: [
-            imageminPngquant(
-                {
-                    quality: [0, 1]
-                }
-            ),
-            imageminJpegtran({
-                progressive: true
-
-            }),
-            imageminGifsicle({
-                interlaced: true,
-                optimizationLevel: 3
-            }),
+            imageminPngquant(),
+            imageminJpegtran(),
+            imageminGifsicle(),
             imageminSvgo(
                 {
                     multipass: true
