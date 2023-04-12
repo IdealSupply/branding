@@ -74,6 +74,7 @@ images:
           value: 96
         color: "#ff0000"
         background: purple
+
       - name: link-red
         format: gif
         quality: 0
@@ -81,4 +82,3 @@ images:
           mode: width
           value: 96
         color: "#ff0000"
-        background: purple
