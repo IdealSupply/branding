@@ -65,7 +65,7 @@ async function convertImages() {
         ]
     });
 }
-
+//apt-get install libpng-dev -y --no-install-recommends
 async function scaleSvg(source: string, data: ImageConversionData) {
     if (data.size) {
         const size = readSvgSize(source);
