@@ -1,78 +1,91 @@
 images:
   - path: images/logos/logo.svg
     variations:
-      - name: logo-black
-        format: png
-        size:
-          mode: original
-        quality: 0
-        color: "#000"
-      - name: logo-small-black
-        format: png
-        size:
-          mode: scale
-          value: 0.5
-        quality: 0
-        color: "#000"
-      - name: logo-large-black
-        format: png
-        size:
-          mode: scale
-          value: 2
-        quality: 0
-        color: "#000"
-      - name: logo-w100-black
-        format: png
-        size:
-          mode: width
-          value: 100
-        quality: 0
-        color: "#000"
-      - name: logo-h100-black
-        format: png
-        size:
-          mode: height
-          value: 100
-        quality: 0
-        color: "#000"
-      - name: logo-red-vector
+      - name: idealsupply-logo
         format: svg
-        quality: 0
-        size:
-          mode: height
-          value: 100
-        color: "#ff0000"
-      - name: logo-red
-        format: jpg
-        quality: 0
-        size:
-          mode: height
-          value: 100
-        color: "#ff0000"
-        background: purple
+
+      - name: idealsupply-logo-red
+        format: svg
+        color: "#e65151"
+      - name: idealsupply-logo-red
+        format: png
+        color: "#e65151"
+      - name: idealsupply-logo-red
+        format: gif
+        color: "#e65151"
+
+      - name: idealsupply-logo-blue
+        format: svg
+        color: "#0053a0"
+      - name: idealsupply-logo-blue
+        format: png
+        color: "#0053a0"
+      - name: idealsupply-logo-blue
+        format: gif
+        color: "#0053a0"
+
+      - name: idealsupply-logo-black
+        format: svg
+        color: black
+      - name: idealsupply-logo-black
+        format: png
+        color: black
+      - name: idealsupply-logo-black
+        format: gif
+        color: black
+
+      - name: idealsupply-logo-white
+        format: svg
+        color: white
+      - name: idealsupply-logo-white
+        format: png
+        color: white
+      - name: idealsupply-logo-white
+        format: gif
+        color: white
+
 
   - path: images/logos/link.svg
     variations:
-      - name: link-red
+      - name: idealsupply-link
+        format: svg
+
+      - name: idealsupply-link-red
+        format: svg
+        color: "#e65151"
+      - name: idealsupply-link-red
         format: png
-        quality: 0
-        size:
-          mode: width
-          value: 96
-        color: "#ff0000"
-        background: purple
-      - name: link-red
-        format: jpg
-        quality: 0
-        size:
-          mode: width
-          value: 96
-        color: "#ff0000"
-        background: purple
-      - name: link-red
+        color: "#e65151"
+      - name: idealsupply-link-red
         format: gif
-        quality: 0
-        size:
-          mode: width
-          value: 96
-        color: "#ff0000"
+        color: "#e65151"
+
+      - name: idealsupply-link-blue
+        format: svg
+        color: "#0053a0"
+      - name: idealsupply-link-blue
+        format: png
+        color: "#0053a0"
+      - name: idealsupply-link-blue
+        format: gif
+        color: "#0053a0"
+
+      - name: idealsupply-link-black
+        format: svg
+        color: black
+      - name: idealsupply-link-black
+        format: png
+        color: black
+      - name: idealsupply-link-black
+        format: gif
+        color: black
+
+      - name: idealsupply-link-white
+        format: svg
+        color: white
+      - name: idealsupply-link-white
+        format: png
+        color: white
+      - name: idealsupply-link-white
+        format: gif
+        color: white
