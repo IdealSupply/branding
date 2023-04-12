@@ -14,7 +14,6 @@ images:
           value: 0.5
         quality: 0
         color: "#000"
-
       - name: logo-large-black
         format: png
         size:
@@ -22,7 +21,6 @@ images:
           value: 2
         quality: 0
         color: "#000"
-
       - name: logo-w100-black
         format: png
         size:
@@ -30,7 +28,6 @@ images:
           value: 100
         quality: 0
         color: "#000"
-
       - name: logo-h100-black
         format: png
         size:
@@ -38,7 +35,6 @@ images:
           value: 100
         quality: 0
         color: "#000"
-
       - name: logo-red-vector
         format: svg
         quality: 0
@@ -46,7 +42,6 @@ images:
           mode: height
           value: 100
         color: "#ff0000"
-
       - name: logo-red
         format: jpg
         quality: 0
@@ -74,7 +69,6 @@ images:
           value: 96
         color: "#ff0000"
         background: purple
-
       - name: link-red
         format: gif
         quality: 0
