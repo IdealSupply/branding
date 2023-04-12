@@ -13,8 +13,5 @@ jobs:
       - name: Install Node & Dependencies
         uses: cpdevtools/common-github-workflows/.github/actions/node-setup-pnpm@v0.0.15
 
-      - name: Install libpng
-        run: sudo apt-get install -y libpng-dev 
-
       - name: Generate Image Variations
         uses: cpdevtools/common-github-workflows/.github/actions/run-build@v0.0.15

@@ -5,7 +5,7 @@
   "scripts": {
     "images": "ts-node --project tsconfig.json ./.scripts/convert-images.ts",
     "build": "pnpm run images",
-    "actions-build":"pnpm run build"
+    "actions-build": "pnpm run build"
   },
   "devDependencies": {
     "@types/imagemin": "^7.0.1",
@@ -19,6 +19,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^9.0.0",
+    "pngquant-bin": "3.1.1",
     "scale-that-svg": "^1.0.6",
     "svg2img": "1.0.0-beta.2",
     "ts-node": "^10.9.1",
