@@ -186,9 +186,5 @@ function setSvgSize(svg: string, width: number, height: number) {
 }
 
 (async () => {
-    try {
-        await convertImages();
-    } catch (error) {
-        console.error(error);
-    }
+    await convertImages();
 })();
