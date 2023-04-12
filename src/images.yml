@@ -3,7 +3,13 @@ images:
     variations:
       - name: idealsupply-logo
         format: svg
-
+        
+      - name: idealsupply-logo-tiny
+        format: png
+        size:
+          mode: height
+          value: 15
+          
       - name: idealsupply-logo-red
         format: svg
         color: "#e65151"
