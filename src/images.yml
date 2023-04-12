@@ -6,6 +6,7 @@ images:
         
       - name: idealsupply-logo-tiny
         format: png
+        color: white
         size:
           mode: height
           value: 15
