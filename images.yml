@@ -1,0 +1,84 @@
+images:
+  - path: images/logos/logo.svg
+    variations:
+      - name: logo-black
+        format: png
+        size:
+          mode: original
+        quality: 0
+        color: "#000"
+      - name: logo-small-black
+        format: png
+        size:
+          mode: scale
+          value: 0.5
+        quality: 0
+        color: "#000"
+
+      - name: logo-large-black
+        format: png
+        size:
+          mode: scale
+          value: 2
+        quality: 0
+        color: "#000"
+
+      - name: logo-w100-black
+        format: png
+        size:
+          mode: width
+          value: 100
+        quality: 0
+        color: "#000"
+
+      - name: logo-h100-black
+        format: png
+        size:
+          mode: height
+          value: 100
+        quality: 0
+        color: "#000"
+
+      - name: logo-red-vector
+        format: svg
+        quality: 0
+        size:
+          mode: height
+          value: 100
+        color: "#ff0000"
+
+      - name: logo-red
+        format: jpg
+        quality: 0
+        size:
+          mode: height
+          value: 100
+        color: "#ff0000"
+        background: purple
+
+  - path: images/logos/link.svg
+    variations:
+      - name: link-red
+        format: png
+        quality: 0
+        size:
+          mode: width
+          value: 96
+        color: "#ff0000"
+        background: purple
+      - name: link-red
+        format: jpg
+        quality: 0
+        size:
+          mode: width
+          value: 96
+        color: "#ff0000"
+        background: purple
+      - name: link-red
+        format: gif
+        quality: 0
+        size:
+          mode: width
+          value: 96
+        color: "#ff0000"
+        background: purple
