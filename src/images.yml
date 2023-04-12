@@ -11,6 +11,13 @@ images:
           mode: height
           value: 15
           
+      - name: idealsupply-logo-massive
+        format: png
+        color: white
+        size:
+          mode: scale
+          value: 10
+          
       - name: idealsupply-logo-red
         format: svg
         color: "#e65151"
