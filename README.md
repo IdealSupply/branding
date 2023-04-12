@@ -3,7 +3,7 @@
 # Ideal Supply Branding
 
 
-## Media Files 
+# Media Files 
 
 [Logos](./dist/images/logos)
 
