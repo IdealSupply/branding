@@ -28,5 +28,4 @@ jobs:
 
       - name: Commit changes
         if: env.CHANGED == 'true'
-        run: |
-          echo "Committing changes"
+        uses: stefanzweifel/git-auto-commit-action@v4
