@@ -18,10 +18,13 @@ jobs:
       - name: Generate Image Variations
         uses: cpdevtools/common-github-workflows/.github/actions/run-build@v0.0.15
 
-      - name: Compare the expected and actual dist directories
+      - name: Check for updated files
         run: |
           if [ "$(git diff --ignore-space-at-eol dist/ | wc -l)" -gt "0" ]; then
-            echo "Detected uncommitted changes after build.  See status below:"
-            git diff
-            exit 1
+            echo "CHANGED=true" >> $GITHUB_ENV
           fi
+
+      - name: Commit changes
+        if: env.CHANGED == 'true'
+        run: |
+          echo "Committing changes"
